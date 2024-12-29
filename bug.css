@@ -1,0 +1,20 @@
+The following CSS code snippet demonstrates an issue where a pseudo-element selector (:before or :after) is used within a media query, but the target element's content property is not defined or is incorrectly specified within the media query itself. This leads to the pseudo-element not appearing as expected.
+
+```css
+.element {
+  width: 100px;
+  height: 100px;
+  background-color: lightblue;
+}
+
+@media (max-width: 768px) {
+  .element::before {
+    content: "This text is not shown"; /* Content property missing or incorrect */
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+```
+
+This results in the pseudo-element content not being displayed in the specified media query. 
