@@ -1,0 +1,19 @@
+The solution is to ensure that the `content` property of the pseudo-element is correctly specified within the media query.  Make sure that the content you want to display is specified as a string, or using other correct content values.
+
+```css
+.element {
+  width: 100px;
+  height: 100px;
+  background-color: lightblue;
+}
+
+@media (max-width: 768px) {
+  .element::before {
+    content: "This text is shown!"; /* Correct content property */
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+```
+By correctly defining the `content` property within the media query, the pseudo-element will display as intended when the media query's condition is met.
